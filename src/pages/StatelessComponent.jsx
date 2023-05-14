@@ -7,3 +7,9 @@ function StatelessComponent({ title, firstName, age }) {
 }
 
 export default StatelessComponent
+
+
+
+
+
+

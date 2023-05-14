@@ -4,9 +4,12 @@ import { useState } from 'react';
 import Course from './pages/Course';
 import FormSubmit from './pages/FormSubmit';
 import StatelessComponent from './pages/StatelessComponent';
+import ComposeComponent from './pages/ComposeComponent';
+import Props from './pages/Props';
+import Button from './components/Button';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0); // local state
   const number = 11;
 
   function listTodos() {
@@ -68,10 +71,33 @@ function App() {
         <StatelessComponent title="truong" firstName="linh" age="123" />
         <StatelessComponent title="dung" firstName="Thanh" age="321321" />
         <StatelessComponent title="khoi" firstName="dang" age="31231" />
-    
+
+        <br />
+        <h3>Compose Component</h3>
+        <ComposeComponent />
+
+       
+
+ 
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </>
   )
 }
 
 export default App
+
+
+/*
+pageA -> button 
+pageB -> button + 2
+
+*/
