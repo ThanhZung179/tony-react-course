@@ -1,6 +1,7 @@
 import React from 'react'
 
 function FormSubmit() {
+  console.log('FormSubmit')
 
   function onSubmit(e) {
     e.preventDefault();

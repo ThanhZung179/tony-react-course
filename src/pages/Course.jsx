@@ -3,6 +3,7 @@ import Button from '../components/Button';
 
 
 function Course() {
+  console.log('Course')
   return (
     <div>
       Course <br />

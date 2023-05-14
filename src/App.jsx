@@ -7,10 +7,14 @@ import StatelessComponent from './pages/StatelessComponent';
 import ComposeComponent from './pages/ComposeComponent';
 import Props from './pages/Props';
 import Button from './components/Button';
+import State from './pages/State';
 
 function App() {
   const [count, setCount] = useState(0); // local state
   const number = 11;
+  const [forceUpdate, setForceUpdate] = useState(Date.now()); // local state
+
+  console.log('App render')
 
   function listTodos() {
     return ['todo 1', 'todo 2'];
@@ -46,7 +50,12 @@ function App() {
       {renderNumber()}
 
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button 
+          onClick={() => {
+            setCount((count) => count + 1)
+            setForceUpdate(Date.now())
+          }}
+        >
           count is {count}
         </button>
         <br />
@@ -64,7 +73,7 @@ function App() {
         {/* using component in jsx */}
         <Course />
 
-        <FormSubmit />
+        <FormSubmit key={forceUpdate} />
 
         <br />
         <h3>Stateless Component</h3>
@@ -76,8 +85,27 @@ function App() {
         <h3>Compose Component</h3>
         <ComposeComponent />
 
-       
+        <br />
+        <h3>Props</h3>
+        <Props 
+          // title="truong" // string
+          age={123} // number
+          colors={['red', 'green', 'blue']} // array
+          user={{ name: 'John', age: 20 }} // object
+          count={count} // number
+          isActive // boolean
+          isFemale={false} // boolean
+          listTodos={listTodos} // function
+          renderNumber={renderElement_1} // react node (react component)
+          buttonComponent={<Button text="Button Props" />} // react node (react component)
+        >
+          this a children tony react props
+        </Props>
 
+
+        <br />
+        <h3>State</h3>
+        <State />
  
 
         <br />
