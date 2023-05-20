@@ -4,11 +4,16 @@ import React, { useState } from 'react'
 function State() {
   const [messageObj, setMessageObj] = useState({
     message: '',
+    country: {
+      id: 1,
+      text: ''
+    }
   }); // local state component // memory A
   console.log('State Component', messageObj)
 
   return (
     <div>
+      Message:
       <input 
         type='text'
         value={messageObj.message}
@@ -16,9 +21,37 @@ function State() {
           const value = e.target.value;
           // messageObj.message = value; // don't work -> memory A
           // setMessageObj(messageObj);
-          const newMessageObject = { ...messageObj }; // clone object -> work -> memory B
-          newMessageObject.message = value;
-          setMessageObj(newMessageObject);
+
+          // const newMessageObject = { ...messageObj }; // clone object -> work -> memory B
+          // newMessageObject.message = value;
+          // setMessageObj(newMessageObject);
+
+          // updater function
+          setMessageObj((prevState) => {
+            return {
+              ...prevState,
+              message: value,
+            }
+          })
+        }}
+      />
+      <br />
+      Country:
+      <input 
+        type='text'
+        value={messageObj.country.text}
+        onChange={(e) => {
+          const value = e.target.value;
+          // updater function
+          setMessageObj((prevState) => {
+            return {
+              ...prevState,
+              country: {
+                ...prevState.country,
+                text: value
+              },
+            }
+          })
         }}
       />
     </div>

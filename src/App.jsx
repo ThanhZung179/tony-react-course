@@ -8,6 +8,9 @@ import ComposeComponent from './pages/ComposeComponent';
 import Props from './pages/Props';
 import Button from './components/Button';
 import State from './pages/State';
+import HandleEvent from './pages/HandleEvent';
+import ConditionalRendering from './pages/ConditionalRendering';
+import List from './pages/List';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -106,8 +109,20 @@ function App() {
         <br />
         <h3>State</h3>
         <State />
- 
 
+        <br />
+        <h3>Handle Event</h3>
+        <HandleEvent /> 
+
+        <br />
+        <h3>Conditional Rendering</h3>
+        <ConditionalRendering />
+ 
+        <br />
+        <h3>List</h3>
+        <List />
+
+        
         <br />
         <br />
         <br />
