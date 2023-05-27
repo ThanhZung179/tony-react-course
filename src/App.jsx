@@ -11,6 +11,7 @@ import State from './pages/State';
 import HandleEvent from './pages/HandleEvent';
 import ConditionalRendering from './pages/ConditionalRendering';
 import List from './pages/List';
+import LifitingStateUp from './pages/LifitingStateUp';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -122,6 +123,9 @@ function App() {
         <h3>List</h3>
         <List />
 
+        <br />
+        <h3>Lifting State Up</h3>
+        <LifitingStateUp />
         
         <br />
         <br />
