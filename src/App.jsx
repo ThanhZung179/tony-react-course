@@ -13,6 +13,8 @@ import ConditionalRendering from './pages/ConditionalRendering';
 import List from './pages/List';
 import LifitingStateUp from './pages/LifitingStateUp';
 import Form from './pages/Form';
+import HookLifecycle from './pages/HookLifecycle';
+import StateHook from './pages/StateHook';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -131,6 +133,14 @@ function App() {
         <br />
         <h3>Form</h3>
         <Form />
+
+        <br />
+        <h3>Hook Lifecycle</h3>
+        <HookLifecycle />
+
+        <br/>
+        <h3>State Hook</h3>
+        <StateHook />
         
         <br />
         <br />
