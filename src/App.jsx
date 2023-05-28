@@ -12,6 +12,7 @@ import HandleEvent from './pages/HandleEvent';
 import ConditionalRendering from './pages/ConditionalRendering';
 import List from './pages/List';
 import LifitingStateUp from './pages/LifitingStateUp';
+import Form from './pages/Form';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -126,6 +127,10 @@ function App() {
         <br />
         <h3>Lifting State Up</h3>
         <LifitingStateUp />
+
+        <br />
+        <h3>Form</h3>
+        <Form />
         
         <br />
         <br />
