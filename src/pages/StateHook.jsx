@@ -15,11 +15,12 @@ function createInitialTodo() {
 
 function StateHook() {
   const [number, setNumber] = React.useState(21)
-  const [todos, setTodos] = React.useState(createInitialTodo);
+  // const [todos, setTodos] = React.useState(createInitialTodo);
+  const [todos, setTodos] = React.useState(createInitialTodo());
 
 
   console.log('todos: ', todos)
-
+  
   function handleUpdaterFunction() {
     // setNumber(number + 1);
     // setNumber(number + 1);

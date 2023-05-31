@@ -2,16 +2,12 @@ import React from 'react';
 
 function CheckUnmount() {
   React.useEffect(() => {
-    console.log("useEffect CheckUnmount")
-
     return () => {
       console.log("useEffect cleanup CheckUnmount")
     }
   })
 
   React.useLayoutEffect(() => {
-    console.log("useLayoutEffect CheckUnmount")
-
     return () => {
       console.log("useLayoutEffect clean up CheckUnmount")
     }
@@ -41,8 +37,7 @@ function HookLifecycle() {
       console.log("useLayoutEffect clean up hook lifecycle")
     }
   })
-  console.log('---------------------')
-  console.log('render hook lifecycle')
+
 
   function handleForceUpdate() {
     setNumber(Date.now())
@@ -51,6 +46,9 @@ function HookLifecycle() {
   function handleCheckUnmounting() {
     setIsAuth(prevState => !prevState)
   }
+
+  console.log('---------------------')
+  console.log('render hook lifecycle')
 
   return (
     <div>

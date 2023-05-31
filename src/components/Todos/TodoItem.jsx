@@ -1,15 +1,17 @@
-/* eslint-disable react/prop-types */
-import React from 'react'
+import React from 'react';
+
+// components
+import Button from '../Button';
 
 function TodoItem({ todo, toggleTodo }) {
   return (
-    <div 
-      key={todo.id}
-      className={todo.status ? 'red' : ''}
+    <div
+      style={{ 
+        color: todo.status ? 'red' : 'black'
+      }}
     >
-      Id: {todo.id} <br />
-      Title: {todo.title} <br />
-      <button type="button" onClick={() => toggleTodo(todo.id)}>Toggle</button>
+      id: {todo.id} - title: {todo.title} 
+      <Button text="Close" handleClick={() => toggleTodo(todo.id)} />
     </div>
   )
 }
