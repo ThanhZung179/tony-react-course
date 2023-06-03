@@ -15,6 +15,8 @@ import LifitingStateUp from './pages/LifitingStateUp';
 import Form from './pages/Form';
 import HookLifecycle from './pages/HookLifecycle';
 import StateHook from './pages/StateHook';
+import UseReducer from './pages/UseReducer';
+import UseEffect from './pages/UseEffect';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -141,6 +143,14 @@ function App() {
         <br/>
         <h3>State Hook</h3>
         <StateHook />
+
+        <br />
+        <h3>useReducer</h3>
+        <UseReducer />
+
+        <br />
+        <h3>useEffect</h3>
+        <UseEffect />
         
         <br />
         <br />
