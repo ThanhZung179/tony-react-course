@@ -17,6 +17,7 @@ import HookLifecycle from './pages/HookLifecycle';
 import StateHook from './pages/StateHook';
 import UseReducer from './pages/UseReducer';
 import UseEffect from './pages/UseEffect';
+import Books from './pages/Books';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -151,7 +152,10 @@ function App() {
         <br />
         <h3>useEffect</h3>
         <UseEffect />
-        
+          
+        <h3>useContext</h3>
+        <Books />
+
         <br />
         <br />
         <br />

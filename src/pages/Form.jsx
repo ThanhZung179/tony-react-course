@@ -1,5 +1,8 @@
 import React from 'react'
 
+// context
+import { useAppContext } from '../context/AppContext'
+
 function Form() {
   // states
   const [name, setName] = React.useState('');
@@ -12,6 +15,8 @@ function Form() {
   const [users, setUsers] = React.useState([])
   // refs
   const firstNameRef = React.useRef();
+  // hooks
+  const {  handleChangeTheme } = useAppContext();
 
 
   function onSubmit(e) {
@@ -42,9 +47,13 @@ function Form() {
     })
   }
 
+  console.log('form render')
+
   return (
     <div>
-      
+      Change Theme: 
+      <button type="buton" onClick={() => handleChangeTheme(`Theme_${Date.now()}`)}>Change Theme</button>
+
       {/* Uncontroller component */}
       Uncontroller input: <input type="text" defaultValue="tony" ref={firstNameRef} /> <br />
       Controller input: <input type="text" value={name} onChange={onChangeName} /> <br/>

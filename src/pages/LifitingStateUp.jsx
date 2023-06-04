@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 import TodoItem from '../components/Todos/TodoItem'
 import Button from '../components/Button';
 
+// context
+import { useAppContext } from '../context/AppContext'
+
 function LiftingStateUp() {
+  const { users } = useAppContext();
+
+  console.log('LiftingStateUp users: ', users)
+
   const [todos, setTodos] = useState([
     {
       id: 1,
