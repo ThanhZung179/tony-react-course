@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
+import React from 'react';
 
-function Button({ text = 'Click', handleClick }) {
-  // first render : count = 0 
-  // next render: count = 0
+const Button = React.forwardRef(({ text = 'Click', handleClick }, ref) => {
   return (
     <>
       <button 
         type="button"
         onClick={handleClick}
+        ref={ref}
       >
         {text}
       </button>
     </>
   )
-}
+})
 
-export default Button
+export default Button;

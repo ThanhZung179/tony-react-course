@@ -18,6 +18,7 @@ import StateHook from './pages/StateHook';
 import UseReducer from './pages/UseReducer';
 import UseEffect from './pages/UseEffect';
 import Books from './pages/Books';
+import UseRef from './pages/UseRef';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -95,66 +96,10 @@ function App() {
         <h3>Compose Component</h3>
         <ComposeComponent />
 
+       
         <br />
-        <h3>Props</h3>
-        <Props 
-          // title="truong" // string
-          age={123} // number
-          colors={['red', 'green', 'blue']} // array
-          user={{ name: 'John', age: 20 }} // object
-          count={count} // number
-          isActive // boolean
-          isFemale={false} // boolean
-          listTodos={listTodos} // function
-          renderNumber={renderElement_1} // react node (react component)
-          buttonComponent={<Button text="Button Props" />} // react node (react component)
-        >
-          this a children tony react props
-        </Props>
-
-
-        <br />
-        <h3>State</h3>
-        <State />
-
-        <br />
-        <h3>Handle Event</h3>
-        <HandleEvent /> 
-
-        <br />
-        <h3>Conditional Rendering</h3>
-        <ConditionalRendering />
- 
-        <br />
-        <h3>List</h3>
-        <List />
-
-        <br />
-        <h3>Lifting State Up</h3>
-        <LifitingStateUp />
-
-        <br />
-        <h3>Form</h3>
-        <Form />
-
-        <br />
-        <h3>Hook Lifecycle</h3>
-        <HookLifecycle />
-
-        <br/>
-        <h3>State Hook</h3>
-        <StateHook />
-
-        <br />
-        <h3>useReducer</h3>
-        <UseReducer />
-
-        <br />
-        <h3>useEffect</h3>
-        <UseEffect />
-          
-        <h3>useContext</h3>
-        <Books />
+        <h3>useRef</h3>
+        <UseRef />
 
         <br />
         <br />
