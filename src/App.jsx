@@ -21,6 +21,7 @@ import Books from './pages/Books';
 import UseRef from './pages/UseRef';
 import MemoComponent from './pages/MemoComponent';
 import CustomHook from './pages/CustomHook';
+import Product from './pages/Product';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -137,6 +138,8 @@ function App() {
 
         <h3>Custom hook</h3>
         <CustomHook />
+
+        <Product />
         <br />
         <br />
         <br />

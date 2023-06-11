@@ -68,3 +68,7 @@ img {
  
   color: blue
 }
+
+.product .cds--tab--overflow-nav-button {
+  display: none;
+}
