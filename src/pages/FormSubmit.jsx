@@ -1,6 +1,11 @@
 import React from 'react'
 
+// hooks
+import useReszieScreen from '../hooks/useReszieScreen';
+
 function FormSubmit() {
+  const { onSmalll } = useReszieScreen();
+
   console.log('FormSubmit')
 
   function onSubmit(e) {
@@ -14,6 +19,15 @@ function FormSubmit() {
 
   return (
     <div>
+      <div
+        style={{
+          width: 100,
+          height: 100,
+          backgroundColor: onSmalll ? 'blue' : 'red'
+        }}
+      >
+        {onSmalll ? "small" : "large"}
+      </div>
       <h4>Form Submit</h4>
       <form onSubmit={onSubmit}>
         <label htmlFor="name">First Name</label>

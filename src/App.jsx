@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // component
 import Course from './pages/Course';
@@ -19,11 +19,17 @@ import UseReducer from './pages/UseReducer';
 import UseEffect from './pages/UseEffect';
 import Books from './pages/Books';
 import UseRef from './pages/UseRef';
+import MemoComponent from './pages/MemoComponent';
+import CustomHook from './pages/CustomHook';
 
 function App() {
   const [count, setCount] = useState(0); // local state
   const number = 11;
   const [forceUpdate, setForceUpdate] = useState(Date.now()); // local state
+  const [movie, setMovie] = React.useState({
+    title: 'javascript',
+    releaseDate: 18
+  })
 
   console.log('App render')
 
@@ -49,6 +55,25 @@ function App() {
     name: 'John',
     image: 'https://thumbs.dreamstime.com/z/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg'
   }
+
+  const handleUpdateMovie = React.useCallback(() => {
+    console.log('movie: ', movie, count) //0
+    setMovie(prevState => ({
+      ...prevState,
+      title: 'learn angular'
+    }))
+  }, [movie])
+
+  // useMemo
+  // const totalTodos = React.useMemo(() => {
+  //   console.log("useMemo")
+  //   return Object.keys(movie).length
+  // }, [])
+  const totalTodos = React.useCallback(() => {
+    return Object.keys(movie).length
+  }, [])
+
+  console.log('totalTodos: ', { totalTodos })
 
   return (
     <>
@@ -80,8 +105,7 @@ function App() {
         <br />
         <hr />
         <br />
- 
-        {/* using component in jsx */}
+  {/* using component in jsx */}
         <Course />
 
         <FormSubmit key={forceUpdate} />
@@ -100,8 +124,19 @@ function App() {
         <br />
         <h3>useRef</h3>
         <UseRef />
-
         <br />
+        <h3>Memo hooks</h3>
+        <MemoComponent 
+          title={movie.title}
+          releaseDate={movie.releaseDate}
+          handleUpdateMovie={handleUpdateMovie}
+        />
+        <h3>useMemo</h3>
+          {totalTodos()}
+        <br />
+
+        <h3>Custom hook</h3>
+        <CustomHook />
         <br />
         <br />
         <br />
