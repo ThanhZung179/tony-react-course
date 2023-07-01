@@ -1,6 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import Button from '../components/Button';
+import { setTheme } from '../reducers/app.actions';
 
-function ComposeComponent() {
+function mapDispatchToProps(dispatch) {
+  return {
+    setTheme: payload => dispatch(setTheme(payload))
+  }
+}
+
+function ComposeComponent({ setTheme }) {
   const comment = {
     date: new Date(),
     text: 'I hope you enjoy learning React!',
@@ -11,8 +20,13 @@ function ComposeComponent() {
   };
   
   return (
-    <div>ComposeComponent</div>
+    <div>
+      ComposeComponent
+
+      Change Theme:  <Button text="Change Theme" handleClick={() => setTheme('dark')} />
+
+    </div>
   )
 }
 
-export default ComposeComponent
+export default connect(null, mapDispatchToProps)(ComposeComponent)

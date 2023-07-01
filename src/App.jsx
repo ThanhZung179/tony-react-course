@@ -23,6 +23,7 @@ import MemoComponent from './pages/MemoComponent';
 import CustomHook from './pages/CustomHook';
 import Product from './pages/Product';
 import LoginButton from './components/LoginButton';
+import ReduxComponent from './pages/ReduxComponent';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -157,6 +158,9 @@ function App() {
         <CustomHook />
 
         <Product />
+
+        <h3>Redux</h3>
+        <ReduxComponent firstName="truong" id={123} />
         <br />
         <br />
         <br />
