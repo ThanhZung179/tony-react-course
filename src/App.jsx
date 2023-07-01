@@ -22,6 +22,7 @@ import UseRef from './pages/UseRef';
 import MemoComponent from './pages/MemoComponent';
 import CustomHook from './pages/CustomHook';
 import Product from './pages/Product';
+import LoginButton from './components/LoginButton';
 
 function App() {
   const [count, setCount] = useState(0); // local state
@@ -120,6 +121,22 @@ function App() {
         <br />
         <h3>Compose Component</h3>
         <ComposeComponent />
+
+        <h3>Props</h3>
+        <Props 
+          title="123" // string
+          age={1} // number
+          user={{
+            age: 19
+          }} // object
+          isAuth={true} // boolean
+          onClick={() => {}} // function
+          renderButton={<Button />} // react element
+          renderButtonType={LoginButton} // react type element
+        >
+            this is children
+        </Props>
+          
 
        
         <br />

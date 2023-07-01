@@ -1,9 +1,10 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
+import PropTypes from 'prop-types';
 
 // destructuring javascript
 // default paramater
-function Props({ title = 'Learn React', age, user, renderNumber, buttonComponent, children, ...props}) {
+// rename destructuring
+function Props({ title = 'Learn React', age, user, renderButton, renderButtonType: RenderButtonType, children, ...props}) {
 
   console.log('props: ', props)
 
@@ -12,10 +13,8 @@ function Props({ title = 'Learn React', age, user, renderNumber, buttonComponent
       Title: {title} <br />
       Age: {age}  <br />
       User: {user.age}  <br />
-      Render Element:  {renderNumber}  <br />
-      Button: {buttonComponent} < br />
-      Count: {props.count}
-
+      Render React Element:  {renderButton}  <br />
+      Render React Type: <RenderButtonType /> <br />
       <br /> 
       {children}
     </div>
@@ -23,3 +22,14 @@ function Props({ title = 'Learn React', age, user, renderNumber, buttonComponent
 }
 
 export default Props
+
+Props.propTypes = {
+  title: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
+  user: PropTypes.shape({
+    age: PropTypes.number
+  }),
+  renderButton: PropTypes.element,
+  renderButtonType: PropTypes.elementType,
+  children: PropTypes.node
+}
