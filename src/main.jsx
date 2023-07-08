@@ -11,10 +11,16 @@ import 'carbon-components/css/carbon-components.min.css';
 // store
 import store from './stores';
 
+// ErrorBoundaries
+import ErrorBoundaries from './components/ErrorBoundaries.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Provider store={store}>
         <AppProvider>
-            <App />
+            <ErrorBoundaries>
+                <App />
+                
+            </ErrorBoundaries>
         </AppProvider>
     </Provider>
 )

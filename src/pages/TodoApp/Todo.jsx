@@ -13,12 +13,15 @@ function Todo() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    async function initialTodo() {
-      const res = await fetch('https://tony-auth-express.vercel.app/api/todo');
-      const data = await res.json();
-      dispatch(setTodo(data.data))
-    }
-    initialTodo();
+    // async function initialTodo() {
+    //   const res = await fetch('https://tony-auth-express.vercel.app/api/todo');
+    //   const data = await res.json();
+    //   dispatch(setTodo(data.data))
+    // }
+    // initialTodo();
+
+    // apply redux thunk
+    dispatch(setTodo())
   }, [])
 
   return (

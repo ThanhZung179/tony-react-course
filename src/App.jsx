@@ -28,6 +28,8 @@ import ReduxComponent from './pages/ReduxComponent';
 import Login from './pages/TodoApp/Login';
 import User from './components/User';
 import Todo from './pages/TodoApp/Todo';
+import Portals from './pages/Portals';
+import UseSafeState from './pages/UseSafeState';
 
 // selectors
 import { isAuthSelector } from './reducers/app.selector';
@@ -84,6 +86,9 @@ function App() {
   }, [])
 
   console.log('totalTodos: ', { totalTodos })
+
+  // test error boundaries
+  // const demoBoundaries = numbers.map(item => item);
 
   return (
     <>
@@ -179,7 +184,15 @@ function App() {
 
         {isAuth && <Todo />}
         <br />
+
+        <h1>Portals</h1>
+        <Portals />
         <br />
+
+        <h1>
+          UseSafeState just appl for react {"<"} v18
+        </h1>
+        <UseSafeState />
         <br />
         <br />
         <br />
