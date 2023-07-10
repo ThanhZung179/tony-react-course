@@ -11,7 +11,8 @@ import useTable from '../hooks/useTable';
 function TodoPage() {
 
   const { rowData, onChangePage } = useTable({
-    url: 'https://jsonplaceholder.typicode.com/todos'
+    method: 'GET',
+    url: '/todo'
   });
 
   return (

@@ -1,6 +1,9 @@
 import React from 'react'
+import axios from 'axios';
 
-function useTable({ url }) {
+import { axiosInstance } from '../services/initRequest'
+
+function useTable({ url, method = 'GET' }) {
   const [rowData, setRowData] = React.useState([]);
   const [page, setPage] = React.useState(1);
   const [pageSize, setPageSize] = React.useState(10);
@@ -11,7 +14,10 @@ function useTable({ url }) {
   }
 
   React.useEffect(() => {
-    fetch(url + `?_limit=${pageSize}&_page=${page}`)
+    axiosInstance(url + `?limit=${pageSize}&page=${page}`, {
+      method,
+      showLoading: true
+    })
       .then(res => res.json())
       .then(data => {
         setRowData(data)

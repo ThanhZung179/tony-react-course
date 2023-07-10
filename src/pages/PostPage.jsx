@@ -10,7 +10,7 @@ import useTable from '../hooks/useTable';
 
 function PostPage() {
   const { rowData } = useTable({
-    url: 'https://jsonplaceholder.typicode.com/posts'
+    url: '/posts'
   });
 
   return (
