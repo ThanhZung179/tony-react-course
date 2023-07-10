@@ -10,9 +10,9 @@ function useReszieScreen() {
   React.useEffect(() => {
     window.addEventListener('resize', checkScreen)
 
-    return () => {
-      window.removeEventListener('resize')
-    }
+    // return () => {
+    //   window.removeEventListener('resize')
+    // }
   }, [])
   
   return {

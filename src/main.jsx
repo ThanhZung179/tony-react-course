@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx'
 import './index.css'; // global css
 import { AppProvider } from './context/AppContext';
@@ -15,13 +16,15 @@ import store from './stores';
 import ErrorBoundaries from './components/ErrorBoundaries.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Provider store={store}>
-        <AppProvider>
-            <ErrorBoundaries>
-                <App />
-                
-            </ErrorBoundaries>
-        </AppProvider>
-    </Provider>
+    <BrowserRouter>
+        <Provider store={store}>
+            <AppProvider>
+                <ErrorBoundaries>
+                    <App />
+                </ErrorBoundaries>
+            </AppProvider>
+        </Provider>
+    </BrowserRouter>
+   
 )
 

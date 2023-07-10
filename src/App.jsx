@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Routes, Route, Link, NavLink } from 'react-router-dom'
 
 // component
 import Course from './pages/Course';
@@ -30,6 +31,10 @@ import User from './components/User';
 import Todo from './pages/TodoApp/Todo';
 import Portals from './pages/Portals';
 import UseSafeState from './pages/UseSafeState';
+import UserPages from './pages/User/User';
+import Profile from './pages/User/Profile';
+import Account from './pages/User/Account';
+import UserDetail from './pages/User/UserDetail';
 
 // selectors
 import { isAuthSelector } from './reducers/app.selector';
@@ -123,20 +128,73 @@ function App() {
         <br />
         <hr />
         <br />
+
+        <h2>Nav Bar</h2>
+        <NavLink 
+          to="/form-submit"
+          className="underline"
+          >
+            Form Submit
+        </NavLink> {' | '}
+        <NavLink 
+          to="/stateless-component"
+          className={value => `navlink-${value.isActive ? 'selected' : 'unselected'}`}
+        >
+          StateLess Component
+        </NavLink> {' | '}
+        <NavLink to="/compose-component">Compose Component</NavLink>  {' | '}
+        <NavLink to="/user">User</NavLink> 
+
+        <hr />
+        <main>
+          <Routes>
+            <Route path="/form-submit" element={<FormSubmit key={forceUpdate} />} />
+            <Route 
+              path="/stateless-component" 
+              element={
+                <>
+                  <h3>Stateless Component</h3>
+                  <StatelessComponent title="truong" firstName="linh" age="123" />
+                  <StatelessComponent title="dung" firstName="Thanh" age="321321" />
+                  <StatelessComponent title="khoi" firstName="dang" age="31231" />
+                </>
+              } 
+            />
+            <Route path="/form-submit" element={<FormSubmit key={forceUpdate} />} />
+            <Route 
+              path="/compose-component" 
+              element={
+                <>
+                  <h3>Compose Component</h3>
+                  <ComposeComponent />
+                </>
+              } 
+            />
+            {/* <Route path="/user" element={<UserPages />} />
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="/user/account" element={<Account />} /> */}
+            <Route path="/user" element={<UserPages />}>
+              <Route path=":userId/profile/:profileId" element={<div>profile detail</div>} />
+              <Route path=":userId" element={<UserDetail />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="account" element={<Account />} />
+            </Route>
+          </Routes>
+        </main>
+        <hr />
+
+        <h4>BrowserRouter & HashRoute</h4>
+        Code: https://github.com/nhattruongniit/react-browser-hash-router
+
+        <br /><br />
   {/* using component in jsx */}
         <Course />
 
-        <FormSubmit key={forceUpdate} />
+        <br />
+       
 
         <br />
-        <h3>Stateless Component</h3>
-        <StatelessComponent title="truong" firstName="linh" age="123" />
-        <StatelessComponent title="dung" firstName="Thanh" age="321321" />
-        <StatelessComponent title="khoi" firstName="dang" age="31231" />
-
-        <br />
-        <h3>Compose Component</h3>
-        <ComposeComponent />
+       
 
         <h3>Props</h3>
         <Props 
